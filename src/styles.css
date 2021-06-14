@@ -85,3 +85,8 @@ li h2 {
 li p {
   margin: 8px;
 }
+
+button.delteTask{
+  background-color: red;
+  color: white;
+}

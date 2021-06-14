@@ -1,13 +1,13 @@
 import React from 'react';
 
 export default function NewTast({newTask, handleChange, handleSubmit}){
-
+    
     return (
         <form onSubmit={handleSubmit}>
             <input
                 name="title"
-                placeHolder="Nowe zadanie"
-                value={newTask.value || ""}
+                placeholder="Nowe zadanie"
+                value={newTask.title || ""}
                 onChange={handleChange}
             />
             {!newTask.title ? null : (

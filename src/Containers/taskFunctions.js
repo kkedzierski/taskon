@@ -1,42 +1,43 @@
 import React, { useState } from 'react';
-import { NewTask } from '../PresentTask/NewTask';
-import { TaskList } from '../PresentTask/TaskList';
+import NewTask from '../PresentTask/NewTask';
+import TaskList from '../PresentTask/TaskList';
 
 
-export default function taskFunctions() {
+export default function TaskFunctions() {
 
     const [newTask, setNewTask] = useState({});
     const [allTasks, setAllTaks] = useState([]);
     
     
-    handleChange(target){
+    const handleChange = ({target}) => {
         const {name, value} = target;
         setNewTask((prev) => ({
             ...prev,
-           [name]: value,
-           id: Date.now() 
+            id: Date.now(),
+           [name]: value
+           
         }));
     }
 
-    handleSubmit(event){
+    const handleSubmit = (event) => {
         event.preventDefault();
         if(!newTask.title) return;
-        setAllTaks((prev)=>([
-            NewTask,
+        setAllTaks((prev)=>[
+            newTask,
             ...prev
         ]);
-        setNewTask=({});
+        setNewTask({});
     }
 
-    hanldeDelete(taskIdToRemove){
+    const handleDelete = (taskIdToRemove) => {
         setAllTaks((prev)=>
-            prev.filter(task => task.id != taskIdToRemove)
+            prev.filter(task => task.id !== taskIdToRemove)
             );
     }
 
     return (
         <main>
-            <h1>Tasks</h1>
+            <h1>Zadania</h1>
             <NewTask 
                 newTask={newTask}
                 handleChange={handleChange}
