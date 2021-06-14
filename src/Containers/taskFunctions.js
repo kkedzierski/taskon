@@ -11,7 +11,7 @@ export default function taskFunctions() {
         <main>
             <h1>Tasks</h1>
             <NewTask 
-                newTask={task}
+                newTask={newTask}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
             />
