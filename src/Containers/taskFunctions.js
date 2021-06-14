@@ -1,11 +1,38 @@
 import React, { useState } from 'react';
+import { NewTask } from '../PresentTask/NewTask';
+import { TaskList } from '../PresentTask/TaskList';
+
 
 export default function taskFunctions() {
 
+    const [newTask, setNewTask] = useState({});
+    const [allTasks, setAllTaks] = useState([]);
     
-    // handleChange(target){
+    
+    handleChange(target){
+        const {name, value} = target;
+        setNewTask((prev) => ({
+            ...prev,
+           [name]: value,
+           id: Date.now() 
+        }));
+    }
 
-    // }
+    handleSubmit(event){
+        event.preventDefault();
+        if(!newTask.title) return;
+        setAllTaks((prev)=>([
+            NewTask,
+            ...prev
+        ]);
+        setNewTask=({});
+    }
+
+    hanldeDelete(taskIdToRemove){
+        setAllTaks((prev)=>
+            prev.filter(task => task.id != taskIdToRemove)
+            );
+    }
 
     return (
         <main>
@@ -16,7 +43,7 @@ export default function taskFunctions() {
                 handleSubmit={handleSubmit}
             />
             <TaskList
-                allTask={allTask}
+                allTasks={allTasks}
                 handleDelete={handleDelete}
             />
         </main>
