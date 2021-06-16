@@ -29,3 +29,5 @@ After pull respository to open project on localhost write in console:
 
 * Add user register and login
 * Add editing existing task
+
+### Project created on codecademy course
