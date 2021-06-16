@@ -1,4 +1,3 @@
-// Website only for learning!
 # Taskon - TODO list
 ### Website for adding tasks
 
@@ -21,12 +20,12 @@ After pull respository to open project on localhost write in console:
 
 ***
  
-![takson - main functionality](https://user-images.githubusercontent.com/47725233/122254268-41a6cc80-cecd-11eb-9125-030ee803a9a7.png)
+![takson - main functionality](https://user-images.githubusercontent.com/47725233/122255520-7e26f800-cece-11eb-934e-c4aaab6653d8.png)
   
 
 ### Future solutions
 
 ***
 
-* Add login to user
+* Add user register and login
 * Add editing existing task
